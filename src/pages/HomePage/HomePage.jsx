@@ -1,6 +1,7 @@
 import React from 'react';
 
-import FlatButton from 'material-ui/lib/flat-button';
+import { RaisedButton } from 'material-ui';
+require('./HomePage.scss');
 
 export default class Home extends React.Component {
     
@@ -8,10 +9,10 @@ export default class Home extends React.Component {
         return (
             <div>
                 <h1>Home</h1>
-                <FlatButton label="Default" />
-                <FlatButton label="Primary" primary={true} />
-                <FlatButton label="Secondary" secondary={true} />
-                <FlatButton label="Disabled" disabled={true} />
+                <RaisedButton label="Default" />
+                <RaisedButton label="Primary" primary={true} />
+                <RaisedButton label="Secondary" secondary={true} />
+                <RaisedButton label="Disabled" disabled={true} />
             </div>
         );
     }
