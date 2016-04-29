@@ -1,7 +1,7 @@
 {
   "name": "react-material-cordova",
   "version": "0.0.1",
-  "description": "A react template for quick prototyping webapps, with support for material design and build using cordova.",
+  "description": "A react template for quick prototyping webapps, with support for material design and build using phonegap.",
   "main": "src/app.js",
   "dependencies": {
     "history": "^2.1.0",
@@ -23,8 +23,7 @@
     "eslint-plugin-react": "^5.0.1",
     "file-loader": "^0.8.5",
     "gulp": "^3.9.1",
-    "gulp-cordova-build-android": "^1.5.0",
-    "gulp-cordova-plugin": "^1.5.0",
+    "gulp-phonegap-build": "^0.1.4",
     "node-sass": "^3.6.0",
     "react-hot-loader": "^1.3.0",
     "react-tap-event-plugin": "^1.0.0",
