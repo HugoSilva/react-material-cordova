@@ -1,9 +1,12 @@
 import React from 'react';
 import Data from '../../data';
-import { AppBar, LeftNav, Menu, MenuItem, Divider } from 'material-ui';
-import ActionHome from 'material-ui/lib/svg-icons/action/home';
-import FaceIcon from 'material-ui/lib/svg-icons/action/face';
-import VisibilityOffIcon from 'material-ui/lib/svg-icons/action/visibility-off';
+import { AppBar, Drawer, MenuItem, Divider } from 'material-ui';
+
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import ActionHome from 'material-ui/svg-icons/action/home';
+import FaceIcon from 'material-ui/svg-icons/action/face';
+import VisibilityOffIcon from 'material-ui/svg-icons/action/visibility-off';
 require('./App.scss');
 
 export default class App extends React.Component {
@@ -22,18 +25,21 @@ export default class App extends React.Component {
     
     changePage(path) {
         this.props.history.push(path);
+        this.setState({open: false});
     }
     
     render() {    
         const data = Data.init();
         
         return (
-            <div>
-                <AppBar title={data.name}
-                    onLeftIconButtonTouchTap={() => this.handleToggle()} />
-                <LeftNav docked={false} width={200} open={this.state.open}
-                    onRequestChange={open => this.setState({open})} >
-                    <Menu onItemTouchTap={() => this.handleClose()} >
+            <MuiThemeProvider muiTheme={getMuiTheme()}>
+                <div>
+                    <AppBar title={data.name}
+                        onLeftIconButtonTouchTap={() => this.handleToggle()} 
+                        onTitleTouchTap={() => this.handleToggle()}/>
+                        
+                    <Drawer docked={false} width={230} open={this.state.open}
+                        onRequestChange={(open) => this.setState({open})} >
                         <MenuItem primaryText="Home" leftIcon={<ActionHome />} 
                             onTouchTap={() => this.changePage('/')} />
                         <MenuItem primaryText="About" leftIcon={<FaceIcon />} 
@@ -41,10 +47,10 @@ export default class App extends React.Component {
                         <Divider />
                         <MenuItem primaryText="Invalid" leftIcon={<VisibilityOffIcon />} 
                             onTouchTap={() => this.changePage('/invalid')} />
-                    </Menu>
-                </LeftNav>
-                {this.props.children}
-            </div>
+                    </Drawer>
+                    {this.props.children}
+                </div>
+            </MuiThemeProvider>
         );
     }
 }

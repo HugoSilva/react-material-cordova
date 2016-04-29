@@ -1,13 +1,23 @@
 var gulp = require('gulp');
-var create = require('gulp-cordova-create');
-var plugin = require('gulp-cordova-plugin');
-var android = require('gulp-cordova-build-android');
+var phonegapBuild = require('gulp-phonegap-build');
+
+var apiToken = REPLACE_APITOKEN;
+
+if (!apiToken) {
+    throw new Error('Please set the PHONEGAP_API_TOKEN environment variable');
+}
+
+var contents = [
+    'www/**/*',
+    'config.xml'
+];
 
 gulp.task('build', () => {
-    return gulp.src('dist')
-        .pipe(create())
-        .pipe(plugin('org.apache.cordova.dialogs'))
-        .pipe(plugin('org.apache.cordova.camera'))
-        .pipe(android())
-        .pipe(gulp.dest('apk'));
+    gulp.src(contents, {base: '.'})
+        .pipe(phonegapBuild({
+          "appId": REPLACE_APPID,
+          "user": {
+            "token": apiToken
+          }
+        }));
 });

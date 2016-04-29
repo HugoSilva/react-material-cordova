@@ -1,18 +1,19 @@
 import React from 'react';
 
 import { List, ListItem, Divider } from 'material-ui';
-import ActionGrade from 'material-ui/lib/svg-icons/action/grade';
-import ActionInfo from 'material-ui/lib/svg-icons/action/info';
-import ContentInbox from 'material-ui/lib/svg-icons/content/inbox';
-import ContentDrafts from 'material-ui/lib/svg-icons/content/drafts';
-import ContentSend from 'material-ui/lib/svg-icons/content/send';
+
+import ActionGrade from 'material-ui/svg-icons/action/grade';
+import ActionInfo from 'material-ui/svg-icons/action/info';
+import ContentInbox from 'material-ui/svg-icons/content/inbox';
+import ContentDrafts from 'material-ui/svg-icons/content/drafts';
+import ContentSend from 'material-ui/svg-icons/content/send';
+require('./AboutPage.scss');
 
 export default class About extends React.Component {
     
     render() {    
         return (
             <div>
-                <h1>About</h1>
                 <List>
                   <ListItem primaryText="Inbox" leftIcon={<ContentInbox />} />
                   <ListItem primaryText="Starred" leftIcon={<ActionGrade />} />

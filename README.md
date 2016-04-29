@@ -1,12 +1,12 @@
-## react-material-cordova
+## react-material-phonegap
 
-A react template for quick prototyping webapps, with support for material design and build using cordova. Some of the features available in project are as follows:
+A react template for quick prototyping webapps, with support for material design and build using phonegap. Some of the features available in project are as follows:
 
-**Babel** | **ES6** | **ESLint** | **Material-ui** | **React** | **SASS** | **Webpack**
+**Babel** | **ES6** | **ESLint** | **Material-ui** | **React** | **SASS** | **PhoneGap** | **Webpack**
 ## Getting Started
 
 ```shell
-$ git clone -o react-material-cordova https://github.com/HugoSilva/react-material-cordova.git [projectfolder]
+$ git clone -o react-material-phonegap https://github.com/HugoSilva/react-material-phonegap.git [projectfolder]
 $ cd [projectfolder]
 $ npm install -g webpack
 $ npm install -g webpack-dev-server
@@ -19,9 +19,10 @@ $ npm install
 2. In your browser go to `http://localhost:8080`.
 
 #### Build & Deployment
-1. Run `npm run build`, this will run webpack and create the final files in the `www` folder.
-2. Run `gulp build` to start the cordova build, which uses the webpack files.
-2. Access the `apk` folder to see the release files.
+1. In the `gulpfile.js` you should replace AppId and the APItoken, the information is available in your phonegap project.
+2. Run `npm run build`, this will run webpack and create the final files in the `www` folder.
+3. Run `gulp build` to start the phonegap build, which uses the webpack files.
+4. Access the your phonegap project to see the final build.
 
 ## Motivation
 
