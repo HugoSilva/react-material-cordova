@@ -12,40 +12,46 @@ require('./App.scss');
 export default class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {open: false};    
+        this.state = {open: false};
     }
-    
+
     handleToggle() {
         this.setState({open: !this.state.open});
     }
-    
+
     handleClose() {
         this.setState({open: false});
     }
-    
+
     changePage(path) {
         this.props.history.push(path);
         this.setState({open: false});
     }
-    
-    render() {    
+
+    render() {
         const data = Data.init();
-        
+
         return (
             <MuiThemeProvider muiTheme={getMuiTheme()}>
                 <div>
                     <AppBar title={data.name}
-                        onLeftIconButtonTouchTap={() => this.handleToggle()} 
+                        onLeftIconButtonTouchTap={() => this.handleToggle()}
                         onTitleTouchTap={() => this.handleToggle()}/>
-                        
+
                     <Drawer docked={false} width={230} open={this.state.open}
                         onRequestChange={(open) => this.setState({open})} >
-                        <MenuItem primaryText="Home" leftIcon={<ActionHome />} 
+                        <MenuItem primaryText="Home" leftIcon={<ActionHome />}
                             onTouchTap={() => this.changePage('/')} />
-                        <MenuItem primaryText="About" leftIcon={<FaceIcon />} 
+                        <MenuItem primaryText="Skills" leftIcon={<ActionHome />}
+                          onTouchTap={() => this.changePage('/skills')} />
+                        <MenuItem primaryText="Projects" leftIcon={<ActionHome />}
+                          onTouchTap={() => this.changePage('/projects')} />
+                        <MenuItem primaryText="Companies" leftIcon={<ActionHome />}
+                          onTouchTap={() => this.changePage('/companies')} />
+                        <MenuItem primaryText="About" leftIcon={<FaceIcon />}
                             onTouchTap={() => this.changePage('/about')} />
                         <Divider />
-                        <MenuItem primaryText="Invalid" leftIcon={<VisibilityOffIcon />} 
+                        <MenuItem primaryText="Invalid" leftIcon={<VisibilityOffIcon />}
                             onTouchTap={() => this.changePage('/invalid')} />
                     </Drawer>
                     {this.props.children}
