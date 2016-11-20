@@ -1,6 +1,6 @@
 {
   "name": "react-material-cordova",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "A react template for quick prototyping webapps, with support for material design and build using phonegap.",
   "main": "src/app.js",
   "dependencies": {
