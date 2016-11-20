@@ -36,9 +36,9 @@
   },
   "scripts": {
     "test": "mocha",
-    "start": "webpack-dev-server --hot --inline --history-api-fallback",
+    "start": "webpack-dev-server --hot --inline --history-api-fallback --config webpack.dev.js",
     "lint": "eslint . --ext .js --ext .jsx",
-    "build": "webpack -p --progress --colors --config webpack.config.js"
+    "build": "webpack --progress --colors --config webpack.prod.js"
   },
   "author": "hugoflsilva",
   "license": "MIT"
