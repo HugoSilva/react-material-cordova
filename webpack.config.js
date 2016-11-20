@@ -18,7 +18,7 @@ var config = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loaders: ['react-hot', 'babel-loader']
+                loader: 'babel'
             },
             {
                 test: /\.jsx?$/,
@@ -30,7 +30,7 @@ var config = {
             },
             {
                 test: /\.scss$/,
-                loaders: ["style", "css", "sass"]
+                loaders: ['style', 'css', 'sass']
             }
         ]
     },
