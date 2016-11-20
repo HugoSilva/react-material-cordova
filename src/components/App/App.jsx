@@ -1,5 +1,5 @@
 import React from 'react';
-import Data from '../../data';
+import * as Data from '../../data';
 import { AppBar, Drawer, MenuItem, Divider } from 'material-ui';
 
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -10,6 +10,11 @@ import VisibilityOffIcon from 'material-ui/svg-icons/action/visibility-off';
 require('./App.scss');
 
 export default class App extends React.Component {
+    static propTypes = {
+        history: React.PropTypes.object.isRequired,
+        children: React.PropTypes.object.isRequired
+    };
+
     constructor(props) {
         super(props);
         this.state = {open: false};    
