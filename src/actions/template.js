@@ -9,6 +9,11 @@ function initialise() {
     });
 }
 
+function sameValue(value) {
+    return value;
+}
+
 export default {
-    initialise
+    initialise,
+    sameValue
 };

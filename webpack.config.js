@@ -1,6 +1,6 @@
 var path = require('path');
 
-var config = {
+module.exports = {
     entry: path.resolve(__dirname, 'src/app.js'),
     output: {
         path: path.resolve(__dirname, 'www'),
@@ -33,8 +33,5 @@ var config = {
                 loaders: ['style', 'css', 'sass']
             }
         ]
-    },
-    devtool: 'inline-source-maps'
+    }
 };
-
-module.exports = config;
