@@ -5,3 +5,4 @@ apk
 platforms
 plugins
 www
+test/__snapshots__
