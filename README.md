@@ -1,4 +1,3 @@
-### Status
 [![Build Status](https://travis-ci.org/HugoSilva/react-material-phonegap.svg?branch=dev)](https://travis-ci.org/HugoSilva/react-material-phonegap)
 
 ## react-material-phonegap
