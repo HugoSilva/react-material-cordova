@@ -1,3 +1,6 @@
+### Status
+[![Build Status](https://travis-ci.org/HugoSilva/react-material-phonegap.svg?branch=dev)](https://travis-ci.org/HugoSilva/react-material-phonegap)
+
 ## react-material-phonegap
 
 A react template for quick prototyping webapps, with support for material design and build using phonegap. Some of the features available in project are as follows:
